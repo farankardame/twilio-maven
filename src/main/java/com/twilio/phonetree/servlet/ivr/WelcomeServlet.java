@@ -18,7 +18,7 @@ public class WelcomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest servletRequest, HttpServletResponse servletResponse)
             throws IOException {
         VoiceResponse response = new VoiceResponse.Builder()
-        		.say(new Say.Builder("Welcome to Department for Work and Pensions." 
+        		.say(new Say.Builder("Welcome to the Department" 
         				+ "Press 1 to know your next JSA Payment or " 
         				+ "Press 2 to know your address in CIS.")
         				.voice(Say.Voice.ALICE)
