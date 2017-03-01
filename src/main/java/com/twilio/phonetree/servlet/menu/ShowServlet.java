@@ -25,11 +25,11 @@ public class ShowServlet extends HttpServlet {
         VoiceResponse response;
         switch (selectedOption) {
             case "1":
-            	SYSTEM_NAME = "CIS";           	
+            	SYSTEM_NAME = "JSA";           	
                 response = getNino();
                 break;
             case "2":
-            	SYSTEM_NAME = "JSA";
+            	SYSTEM_NAME = "CIS";
             	response = getNino();
                
                 break;
@@ -76,11 +76,7 @@ public class ShowServlet extends HttpServlet {
                 .gather(new Gather.Builder()
                         .action("/commuter/nino")
                         .numDigits(6)
-                        .build())
-                .play(new Play.Builder("http://howtodocs.s3.amazonaws.com/et-phone.mp3")
-                        .loop(3)
-                        .build())
-                .build();
+                        .build()).build();
     	return response;
         
     }

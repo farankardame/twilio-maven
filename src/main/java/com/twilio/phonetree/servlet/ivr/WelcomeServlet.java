@@ -28,11 +28,7 @@ public class WelcomeServlet extends HttpServlet {
         		.gather(new Gather.Builder()
                         .action("/menu/show")
                         .numDigits(1)
-                        .build())
-                .play(new Play.Builder("http://howtodocs.s3.amazonaws.com/et-phone.mp3")
-                        .loop(3)
-                        .build())
-                .build();
+                        .build()).build();
 
         servletResponse.setContentType("text/xml");
         try {

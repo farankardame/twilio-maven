@@ -72,11 +72,7 @@ public class NinoServlet extends HttpServlet {
                 .gather(new Gather.Builder()
                         .action("/commuter/dob")
                         .numDigits(8)
-                        .build())
-                .play(new Play.Builder("http://howtodocs.s3.amazonaws.com/et-phone.mp3")
-                        .loop(3)
-                        .build())
-                .build();
+                        .build()).build();
         servletResponse.setContentType("text/xml");
         try {
             servletResponse.getWriter().write(response.toXml());
