@@ -30,3 +30,6 @@ dependencies {
     testCompile 'pl.pragmatists:JUnitParams:1.0.4'
     testCompile 'xmlunit:xmlunit:1.6'
 }
+
+task stage(dependsOn: ['jettyRun', 'clean'])
+jettyRun.mustRunAfter clean
