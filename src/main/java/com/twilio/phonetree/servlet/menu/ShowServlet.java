@@ -44,10 +44,7 @@ public class ShowServlet extends HttpServlet {
 
         VoiceResponse response = new VoiceResponse.Builder()
                 .say(new Say.Builder(
-                        "To get to your extraction point, get on your bike and go down "
-                        + "the street. Then Left down an alley. Avoid the police cars. Turn left "
-                        + "into an unfinished housing development. Fly over the roadblock. Go "
-                        + "passed the moon. Soon after you will see your mother ship.")
+                        "Please provide your National Insurance number.")
                         .voice(Say.Voice.ALICE)
                         .language(Say.Language.EN_GB)
                         .build())

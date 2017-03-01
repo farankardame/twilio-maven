@@ -1,14 +1,16 @@
 package com.twilio.phonetree.servlet.ivr;
 
-import com.twilio.twiml.Gather;
-import com.twilio.twiml.Play;
-import com.twilio.twiml.TwiMLException;
-import com.twilio.twiml.VoiceResponse;
+import java.io.IOException;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
+import com.twilio.twiml.Gather;
+import com.twilio.twiml.Play;
+import com.twilio.twiml.Say;
+import com.twilio.twiml.TwiMLException;
+import com.twilio.twiml.VoiceResponse;
 
 public class WelcomeServlet extends HttpServlet {
 
@@ -16,7 +18,13 @@ public class WelcomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest servletRequest, HttpServletResponse servletResponse)
             throws IOException {
         VoiceResponse response = new VoiceResponse.Builder()
-                .gather(new Gather.Builder()
+        		.say(new Say.Builder("Welcome to Department for Work and Pensions." 
+        				+ "Press 1 to know your next JSA Payment or " 
+        				+ "Press 2 to know your address in CIS.")
+        				.voice(Say.Voice.ALICE)
+                        .language(Say.Language.EN_GB)
+        				.build())                
+        		.gather(new Gather.Builder()
                         .action("/menu/show")
                         .numDigits(1)
                         .build())
