@@ -55,7 +55,7 @@ public class ConnectServletTest {
 
         when(request.getParameter("Digits")).thenReturn(digits);
 
-        ConnectServlet servlet = new ConnectServlet();
+        NinoServlet servlet = new NinoServlet();
         servlet.doPost(request, response);
 
         Document doc = XMLUnit.buildControlDocument(stringWriter.toString());
@@ -72,7 +72,7 @@ public class ConnectServletTest {
 
         when(request.getParameter("Digits")).thenReturn(digits);
 
-        ConnectServlet servlet = new ConnectServlet();
+        NinoServlet servlet = new NinoServlet();
         servlet.doPost(request, response);
 
         Document doc = XMLUnit.buildControlDocument(stringWriter.toString());

@@ -16,8 +16,12 @@
         <servlet-class>com.twilio.phonetree.servlet.menu.ShowServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>commuter-connect</servlet-name>
-        <servlet-class>com.twilio.phonetree.servlet.commuter.ConnectServlet</servlet-class>
+        <servlet-name>check-nino</servlet-name>
+        <servlet-class>com.twilio.phonetree.servlet.commuter.NinoServlet</servlet-class>
+    </servlet>
+	<servlet>
+        <servlet-name>check-dob</servlet-name>
+        <servlet-class>com.twilio.phonetree.servlet.commuter.DobServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -29,7 +33,11 @@
         <url-pattern>/menu/show</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>commuter-connect</servlet-name>
-        <url-pattern>/commuter/connect</url-pattern>
+        <servlet-name>check-nino</servlet-name>
+        <url-pattern>/commuter/nino</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>check-dob</servlet-name>
+        <url-pattern>/commuter/dob</url-pattern>
     </servlet-mapping>
 </web-app>
