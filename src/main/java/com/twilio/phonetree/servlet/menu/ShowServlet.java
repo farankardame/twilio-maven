@@ -21,20 +21,22 @@ public class ShowServlet extends HttpServlet {
             throws IOException {
 
         String selectedOption = servletRequest.getParameter("Digits");
+        
+        int selected = Integer.parseInt(selectedOption);
 
-        VoiceResponse response;
-        switch (selectedOption) {
-            case "1":
+        VoiceResponse response = null;
+        switch (selected) {
+            case 1:
             	SYSTEM_NAME = "JSA";           	
                 response = getNino();
                 break;
-            case "2":
+            case 2:
             	SYSTEM_NAME = "CIS";
             	response = getNino();
                
                 break;
             default:
-                response = com.twilio.phonetree.servlet.common.Redirect.toMainMenu();
+                //response = com.twilio.phonetree.servlet.common.Redirect.toMainMenu();
         }
 
         servletResponse.setContentType("text/xml");
