@@ -31,5 +31,5 @@ dependencies {
     testCompile 'xmlunit:xmlunit:1.6'
 }
 
-task stage(dependsOn: ['jettyRun', 'clean'])
-jettyRun.mustRunAfter clean
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
