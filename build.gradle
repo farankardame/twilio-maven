@@ -1,12 +1,8 @@
 plugins {
     id 'java'
     id 'jetty'
-    id 'checkstyle'
 }
 
-checkstyle {
-    toolVersion = "6.1.1"
-}
 
 group 'com.twilio.phonetree'
 version '1.0'
